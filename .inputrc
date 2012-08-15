@@ -1,0 +1,9 @@
+#for Ctrl+l clear screen
+"\C-l":'clear\n'
+
+#List files in current directory (F2 is binded)
+"\eOQ":"\C-uls\n"
+
+#Dealing with history awesome
+"\C-p": history-search-backward
+"\C-n": history-search-forward
