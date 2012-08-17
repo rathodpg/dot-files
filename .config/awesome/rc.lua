@@ -103,6 +103,7 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal },
                                     { "Firefox", "/usr/bin/firefox"},
+                                    { "Thunderbird", "/usr/bin/thunderbird"},
                                     { "Xrandr on", awful.util.getdir("config") .. "/scripts/monitor.sh"},
                                     { "Nautilus", "/usr/bin/nautilus"}
                                   }
@@ -505,6 +506,8 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "tilda" },
+      properties = { floating = true } },
+    { rule = { class = "Firefox" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
