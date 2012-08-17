@@ -179,6 +179,7 @@ alias jslint="jslint --color --vars --sloppy --undef";
 alias mpcd="mpc -h 10.100.98.29"
 alias PROXY="http_proxy=localhost:8118"
 alias youtube-dl="youtube-dl -l"
+alias dssh="ssh -i .ssh/id_rsa_directi"  
 
 ########
 #EXPORTS
