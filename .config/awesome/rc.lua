@@ -103,7 +103,7 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal },
                                     { "Firefox", "/usr/bin/firefox"},
-                                    { "Xrandr on", "/usr/bin/xrandr --output VGA1 --mode 1920x1080 --right-of LVDS1"},
+                                    { "Xrandr on", awful.util.getdir("config") .. "/scripts/monitor.sh"},
                                     { "Nautilus", "/usr/bin/nautilus"}
                                   }
                         })
