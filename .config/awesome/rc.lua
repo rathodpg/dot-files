@@ -324,9 +324,17 @@ root.buttons(awful.util.table.join(
 ))
 -- }}}
 
+-- Set awful menu keys
+awful.menu.menu_keys = { up  = { "k", "Up" },
+                         down = { "j", "Down" },
+                         exec = { "l", "Return", "Right" },
+                         back = { "h", "Left" },
+                         close = { "q", "Escape" },
+                       }
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- USER DEFINED KEY BINDINGS 
+    awful.key({modkey,} , "space", function () awful.menu.clients({ width=250 }, { keygrabber=true }) end),
     awful.key({ }, "XF86PowerOff", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/shutdown.sh") end),
 	awful.key({ }, "XF86AudioMute", function() awful.util.spawn("amixer sset Master toggle") end),
     awful.key({ modkey, }, "b", function() awful.util.spawn("/usr/bin/nautilus") end),
@@ -350,7 +358,11 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, }, "l", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/lockscreen.sh") end),
 
     awful.key({modkey}, "d", function() awful.util.spawn("/home/shadyabhi/codes/godict/godict.py") end),
-
+    --awful.key({modkey, "Shift", }, "s" 
+     --   function()
+      --      c = mouse.coords()
+       --     mouse.coords({x=(c.x*2), y=(c.y)})
+     --   end),
     awful.key({modkey}, "e", function()
         revelation({})
         end),
@@ -507,8 +519,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "tilda" },
       properties = { floating = true } },
-    { rule = { class = "Firefox" },
-      properties = { floating = true } },
+    --{ rule = { class = "Firefox" },
+     -- properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
