@@ -93,5 +93,3 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <down> <nop>
 set cursorline
-highlight Cursorline cterm=bold
-hi x017_NavyBlue ctermfg=1 guifg=#b3b3b3
