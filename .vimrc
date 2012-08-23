@@ -99,3 +99,8 @@ hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=whi
 set ttymouse=xterm2
 "Add mouse support only in normal mode
 set mouse=n
+"Paste data
+" Press F8, paste stuff & then press <Esc> and move on
+nmap <F8> :set paste<CR>i
+imap <F8> <ESC>:set paste<CR>i<Right>
+au InsertLeave * set nopaste
