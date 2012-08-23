@@ -104,3 +104,5 @@ set mouse=n
 nmap <F8> :set paste<CR>i
 imap <F8> <ESC>:set paste<CR>i<Right>
 au InsertLeave * set nopaste
+"make the pane partitioning bar thin
+set fillchars=vert:│
