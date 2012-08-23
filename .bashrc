@@ -210,3 +210,4 @@ export EC2_URL=https://ec2.us-west-1.amazonaws.com/
 #Doesn't overwrite existing file when ">" used
 set -o noclobber
 shopt -s autocd
+set t_Co=16

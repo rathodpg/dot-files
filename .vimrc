@@ -93,3 +93,9 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <down> <nop>
 set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
+"Add mouse support
+set ttymouse=xterm2
+"Add mouse support only in normal mode
+set mouse=n
