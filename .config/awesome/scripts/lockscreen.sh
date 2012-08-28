@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Send noti
+notify-send "Screen locked" "Done"
 #Lock the screen
 xlock -mode clock -geometry 0x0 &
 

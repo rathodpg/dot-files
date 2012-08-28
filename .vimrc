@@ -14,7 +14,7 @@ colorscheme elflord
 set incsearch
 set hlsearch
 set pastetoggle=<F2>
-set cursorline
+"set cursorline
 
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
@@ -83,7 +83,7 @@ function! AutoHighlightToggle()
 endfunction
 call AutoHighlightToggle()
 "Call pathogen that manages all runtime paths.
-call pathogen#infect()
+"call pathogen#infect()
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -92,8 +92,8 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <down> <nop>
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"set cursorline
+"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 "Add mouse support
 set ttymouse=xterm2
@@ -106,3 +106,5 @@ imap <F8> <ESC>:set paste<CR>i<Right>
 au InsertLeave * set nopaste
 "make the pane partitioning bar thin
 set fillchars=vert:│
+"Tagbar toggle
+nnoremap <leader>l :TagbarToggle<CR>
