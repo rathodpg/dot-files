@@ -334,6 +334,7 @@ awful.menu.menu_keys = { up  = { "k", "Up" },
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- USER DEFINED KEY BINDINGS 
+    awful.key({ }, "XF86TouchpadToggle", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/locktouchpad.sh") end),
     awful.key({modkey,} , "space", function () awful.menu.clients({ width=250 }, { keygrabber=true }) end),
     awful.key({ }, "XF86PowerOff", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/shutdown.sh") end),
 	awful.key({ }, "XF86AudioMute", function() awful.util.spawn("amixer sset Master toggle") end),
