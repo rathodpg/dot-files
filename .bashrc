@@ -162,7 +162,7 @@ alias dict="/home/shadyabhi/codes/godict/pretty_print.py"
 alias p="curl -s -F 'sprunge=<-' http://sprunge.us | perl -ne 'chomp and print' | xclip -selection c && xclip -o -selection c"
 alias N="sudo netcfg "
 alias dnddir="cd /media/misc1/D"
-alias searchinfiles="grep -inr"
+alias sif="grep -inr"
 alias wget="wget -c -t inf"
 alias dhistory="less $HOME/dict/dicthistory"
 alias rm="rm --verbose"
@@ -179,7 +179,8 @@ alias jslint="jslint --color --vars --sloppy --undef";
 alias mpcd="mpc -h 10.100.98.29"
 alias PROXY="http_proxy=localhost:8118"
 alias youtube-dl="youtube-dl -l"
-alias dssh="ssh -v -i ~/.ssh/id_rsa_directi"  
+alias dssh="ssh -v -i ~/.ssh/id_rsa_directi -F ~/.ssh/directi_ssh_config"  
+alias dxssh="dssh -t xbox.internal.directi.com ssh"
 alias ll="ls -l --color"
 
 ########
