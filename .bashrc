@@ -189,6 +189,7 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 alias gpl="git pull"
 alias gpush="git push"
+alias less="less -r"
 
 ########
 #EXPORTS
