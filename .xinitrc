@@ -15,6 +15,7 @@ xset b off &
 #/usr/bin/xinput set-prop 11 "Device Enabled" 0 &
 #exec ck-launch-session dbus-launch --sh-syntax gnome-session
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
+/usr/bin/SpiderOak &
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
 # exec startkde
 # exec startxfce4

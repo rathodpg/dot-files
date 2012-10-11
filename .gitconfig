@@ -1,0 +1,35 @@
+[user]
+	name = Abhijeet Rastogi
+	email = abhijeet.1989@gmail.com
+[credential]
+	helper = cache --timeout=7200
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    whitespace = red reverse
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+    st = status
+    ci = commit
+    ca = commit -a
+    br = branch
+    co = checkout
+    df = diff
+    dc = diff --cached
+    lg = log -p
+    lol = "log --all --pretty=format:\"%h %cd %s (%an)\""
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+    # Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard

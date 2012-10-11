@@ -139,6 +139,25 @@ wgetsite()
 	wget --recursive --page-requisites --html-extension --convert-links --domains $1 --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" --no-parent $2;
 }
 
+gitpcp()
+{
+    echo -e "\033[32m Doing git pull"
+    tput sgr0;
+    git pull;
+    sleep 2
+    echo -e "\033[32m Doing git commit -a"
+    tput sgr0;
+    git commit -a \"$1\";
+    sleep 2
+    if [[ $? == 1 ]];then
+        echo -e "\033[32m Skipping push"
+        return
+    fi
+    echo -e "\033[32m Doing git push"
+    tput sgr0;
+    git push;
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 
