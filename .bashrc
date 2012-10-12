@@ -158,6 +158,16 @@ gitpcp()
     git push;
 }
 
+gitwc()
+{
+    prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A 1 | tail -n 1 | cut -d " " -f 1`
+    echo $prev_commit_hash
+    git diff $prev_commit_hash $1
+    echo -e "\033[32m"
+    git log $1 | head -n 5
+    tput sgr0
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 
