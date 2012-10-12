@@ -160,7 +160,8 @@ gitpcp()
 
 gitwc()
 {
-    prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A 1 | tail -n 1 | cut -d " " -f 1`
+    against="$2"
+    prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A $2 | tail -n 1 | cut -d " " -f 1`
     echo $prev_commit_hash
     git diff $prev_commit_hash $1
     echo -e "\033[32m"
