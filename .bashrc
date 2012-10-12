@@ -162,7 +162,10 @@ gitwc()
 {
     #Against value tells to diff against which old commit. 1 means the commit just before $1
     against="$2"
-    prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A $2 | tail -n 1 | cut -d " " -f 1`
+    if [[ $against == "" ]];then 
+        let against="1"
+    fi
+    prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A $against | tail -n 1 | cut -d " " -f 1`
     echo $prev_commit_hash
     git diff $prev_commit_hash $1
     echo -e "\033[32m"
