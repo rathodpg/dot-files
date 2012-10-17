@@ -173,6 +173,12 @@ gitwc()
     tput sgr0
 }
 
+swiki()
+{
+    search_term="^*.*$1"
+    (cd /home/shadyabhi/my-wiki/wiki;grep -inr --exclude-dir=.git "$search_term";)
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 
