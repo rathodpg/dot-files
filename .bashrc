@@ -175,8 +175,8 @@ gitwc()
 
 swiki()
 {
-    search_term="^*.*$1"
-    find /home/shadyabhi/my-wiki/wiki/ -type f | xargs grep --color --exclude-dir=.git -Hin "$search_term"
+    search_term="$1"
+    find /home/shadyabhi/my-wiki/wiki/ -type f | xargs grep --color --exclude-dir=.git $2 -Hin "$search_term"
 }
 
 #Start tmux only when required.
