@@ -181,7 +181,8 @@ swiki()
 
 vl()
 {
-    vim `echo $1 | sed -e 's/:[0-9]/ +/' -e 's/:$//'`
+    cmd=`echo $1 | sed -e 's/:\([0-9]\)/ +\1/' -e 's/:$//'`
+    vim $cmd
 }
 
 #Start tmux only when required.
