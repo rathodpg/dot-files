@@ -24,7 +24,7 @@ shopt -s checkwinsize
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-# Change the window title of X terminals 
+# Change the window title of X terminals
 case ${TERM} in
 	xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
@@ -98,8 +98,8 @@ etymo()
 {
 curl -s  "http://www.etymonline.com/index.php?term=$1" | html2text -nobs | sed '1,/^.*Z/d' | head -n 7 | less;
 }
-googl () 
-{ 
+googl ()
+{
 	curl -s -d "url=${1}" http://goo.gl/api/url | sed -n "s/.*:\"\([^\"]*\).*/\1\n/p" | xclip -i -selection clipboard;
 }
 
@@ -162,7 +162,7 @@ gitwc()
 {
     #Against value tells to diff against which old commit. 1 means the commit just before $1
     against="$2"
-    if [[ $against == "" ]];then 
+    if [[ $against == "" ]];then
         let against="1"
     fi
     prev_commit_hash=`git log --oneline | grep $(echo $1 | cut -c 1-7) -A $against | tail -n 1 | cut -d " " -f 1`
@@ -177,6 +177,11 @@ swiki()
 {
     search_term="$1"
     find /home/shadyabhi/my-wiki/wiki/ -type f | xargs grep --color --exclude-dir=.git $2 -Hin "$search_term"
+}
+
+vl()
+{
+    vim `echo $1 | sed -e 's/:[0-9]/ +/' -e 's/:$//'`
 }
 
 #Start tmux only when required.
@@ -219,7 +224,7 @@ alias jslint="jslint --color --vars --sloppy --undef";
 alias mpcd="mpc -h 10.100.98.29"
 alias PROXY="http_proxy=localhost:8118"
 alias youtube-dl="youtube-dl -l"
-alias dssh="ssh -v -i ~/.ssh/id_rsa_directi -F ~/.ssh/directi_ssh_config"  
+alias dssh="ssh -v -i ~/.ssh/id_rsa_directi -F ~/.ssh/directi_ssh_config"
 alias dxssh="dssh -t xbox.internal.directi.com ssh"
 alias ll="ls -l --color"
 alias ..="cd .."
