@@ -225,7 +225,7 @@ alias jslint="jslint --color --vars --sloppy --undef";
 alias mpcd="mpc -h 10.100.98.29"
 alias PROXY="http_proxy=localhost:8118"
 alias youtube-dl="youtube-dl -l"
-alias dssh="ssh -v -i ~/.ssh/id_rsa_directi -F ~/.ssh/directi_ssh_config"
+alias dssh="ssh -i ~/.ssh/id_rsa_directi -F ~/.ssh/directi_ssh_config"
 alias dxssh="dssh -t xbox.internal.directi.com ssh"
 alias ll="ls -l --color"
 alias ..="cd .."
@@ -236,6 +236,7 @@ alias ..5="cd ../../../../.."
 alias gpl="git pull"
 alias gpush="git push"
 alias less="less -r"
+alias ff="find -name "
 
 ########
 #EXPORTS
