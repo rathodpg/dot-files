@@ -84,6 +84,7 @@ endfunction
 call AutoHighlightToggle()
 "Call pathogen that manages all runtime paths.
 "call pathogen#infect()
+
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -109,5 +110,13 @@ set fillchars=vert:│
 "Tagbar toggle
 nnoremap <leader>l :TagbarToggle<CR>
 autocmd Filetype puppet setlocal ts=2 sts=2 sw=2
+autocmd Filetype puppet setlocal et | %retab!
+
 "Removing all trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+"Autosave a file when Esc pressed two times
+map <Esc><Esc> :w<CR>
+
+"Quit vim if Esc and then S is pressed
+map <Esc>s :wq<CR>
