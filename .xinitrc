@@ -16,7 +16,8 @@ xset b off &
 #exec ck-launch-session dbus-launch --sh-syntax gnome-session
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
 /usr/bin/SpiderOak &
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
+exec awesome
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice

@@ -185,6 +185,12 @@ vl()
     vim $cmd
 }
 
+mtx()
+{
+    ssh -i /home/shadyabhi/.ssh/id_rsa_directi -F /home/shadyabhi/.ssh/directi_ssh_config xbox.internal.directi.com "mkdir -p /home/abhijeet.ras/$2"
+    rsync -avze 'ssh -i /home/shadyabhi/.ssh/id_rsa_directi -F /home/shadyabhi/.ssh/directi_ssh_config' $1 xbox.internal.directi.com:/home/abhijeet.ras/$2
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 
@@ -206,6 +212,7 @@ a() { alias $1=cd\ $PWD; }
 alias s3cmd="s3cmd --guess-mime-type"
 alias dict="/home/shadyabhi/codes/godict/pretty_print.py"
 alias p="curl -s -F 'sprunge=<-' http://sprunge.us | perl -ne 'chomp and print' | xclip -selection c && xclip -o -selection c"
+alias pd="python2 ~/directi/scripts/pb.py"
 alias N="sudo netcfg "
 alias dnddir="cd /media/misc1/D"
 alias sif="grep --exclude-dir=.git -inr"
@@ -220,7 +227,7 @@ alias mount="mount -v"
 alias grepall="grep --ignore-case --recursive --line-number --with-filename"
 alias fullupgrade="yaourt -Syu --noconfirm"
 alias onlineapps='lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2'
-alias diskusage='du -cks * | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done'
+alias diskusage='sudo du -cks * | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done'
 alias jslint="jslint --color --vars --sloppy --undef";
 alias mpcd="mpc -h 10.100.98.29"
 alias PROXY="http_proxy=localhost:8118"

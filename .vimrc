@@ -108,6 +108,6 @@ au InsertLeave * set nopaste
 set fillchars=vert:│
 "Tagbar toggle
 nnoremap <leader>l :TagbarToggle<CR>
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype puppet setlocal ts=2 sts=2 sw=2
 "Removing all trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e

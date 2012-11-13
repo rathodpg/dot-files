@@ -259,7 +259,7 @@ mytasklist.buttons = awful.util.table.join(
                                              end
                                           end),
                      --]]
-                     
+
                      -- Added openbox like feature of Right-click to close the window
                      awful.button({ }, 3, function (c)
                                               c:kill()
@@ -309,7 +309,7 @@ for s = 1, screen.count() do
         spacer, tempicon,
         spacer, separator, batwidget, spacer, baticon,
         spacer, separator, memwidget, memicon,
-        spacer, separator, upicon, netwidget_box, dnicon, 
+        spacer, separator, upicon, netwidget_box, dnicon,
         spacer, separator, cpuwidget,spacer, cpuicon,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -334,7 +334,7 @@ awful.menu.menu_keys = { up  = { "k", "Up" },
                        }
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    -- USER DEFINED KEY BINDINGS 
+    -- USER DEFINED KEY BINDINGS
     awful.key({ modkey, "Shift",}, "x", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/deletesong.sh") end),
     awful.key({ }, "XF86TouchpadToggle", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/locktouchpad.sh") end),
     awful.key({modkey,} , "space", function () awful.menu.clients({ width=250 }, { keygrabber=true }) end),
@@ -342,9 +342,9 @@ globalkeys = awful.util.table.join(
 	awful.key({ }, "XF86AudioMute", function() awful.util.spawn("amixer sset Master toggle") end),
     awful.key({ modkey, }, "b", function() awful.util.spawn("/usr/bin/nautilus") end),
     awful.key({ modkey, }, "t", function() awful.util.spawn("/usr/bin/thunderbird") end),
-	--awful.key({ }, "XF86Sleep", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/sleep.sh") end),
-    awful.key({ modkey, "Shift"   }, "s", function() awful.util.spawn("scrot -s") end), 
-    awful.key({ modkey, "Shift", "Control"   }, "s", function() awful.util.spawn("scrot") end), 
+	-- awful.key({ }, "XF86Sleep", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/sleep.sh") end),
+    awful.key({ modkey, "Shift"   }, "s", function() awful.util.spawn("scrot -s") end),
+    awful.key({ modkey, "Shift", "Control"   }, "s", function() awful.util.spawn("scrot") end),
     awful.key({ "Mod1" }, "Escape", function ()
          -- If you want to always position the menu on the same place set coordinates
                awful.menu.menu_keys.down = { "Down", "Alt_L" }
@@ -361,7 +361,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, }, "l", function() awful.util.spawn(awful.util.getdir("config") .. "/scripts/lockscreen.sh") end),
 
     awful.key({modkey}, "d", function() awful.util.spawn("/home/shadyabhi/codes/godict/godict.py") end),
-    --awful.key({modkey, "Shift", }, "s" 
+    --awful.key({modkey, "Shift", }, "s"
      --   function()
       --      c = mouse.coords()
        --     mouse.coords({x=(c.x*2), y=(c.y)})
@@ -404,7 +404,7 @@ globalkeys = awful.util.table.join(
     -- Added keyboard shortcuts
     awful.key({ "Mod1"           }, "F2", function() awful.util.spawn("/usr/bin/dmenu_run", false) end),
     -- End of "I added" ones
-    -- 
+    --
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
