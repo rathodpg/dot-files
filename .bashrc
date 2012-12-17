@@ -191,6 +191,16 @@ mtx()
     rsync -avze 'ssh -i /home/shadyabhi/.ssh/id_rsa_directi -F /home/shadyabhi/.ssh/directi_ssh_config' $1 xbox.internal.directi.com:/home/abhijeet.ras/$2
 }
 
+s3upload()
+{
+    s3cmd put --acl-public $1 s3://s3files.abhijeetr.com
+}
+
+st()
+{
+    sudo find -type f ! -path '*.git/*' | sed 's/.*/"&"/' | sudo xargs -P 1000 -n 1000 grep $2 -iHn --colour=auto "$1"
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 

@@ -111,7 +111,7 @@ set fillchars=vert:│
 nnoremap <leader>l :TagbarToggle<CR>
 autocmd Filetype puppet setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype puppet setlocal et | %retab!
+"autocmd Filetype puppet setlocal et | %retab!
 
 "Removing all trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
@@ -121,3 +121,7 @@ map <Esc><Esc> :w<CR>
 
 "Quit vim if Esc and then S is pressed
 map <Esc>s :wq<CR>
+
+"Tabularize
+nmap <leader>a> :Tabularize /=><cr>
+vmap <leader>a> :Tabularize /=><cr>

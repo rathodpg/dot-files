@@ -32,7 +32,7 @@
     #Log with patch
     lolp = log --pretty=format:"%C(yellow)%h\\ %Cblue%cd%Cred%d\\ %Creset%s%Cred\\ [%cn]" --decorate -p
     #Log with Author search
-    lola = log --pretty=format:"%C(yellow)%h\\ %Cblue%cd%Cred%d\\ %Creset%s%Cred\\ [%cn]" --decorate -p --numstat --author
+    lola = log --pretty=format:"%C(yellow)%h\\ %Cblue%cd%Cred%d\\ %Creset%s%Cred\\ [%cn]" --decorate --numstat --date=relative --author
     #Log with line changes
     loll = log --pretty=format:"%C(yellow)%h\\ %Cblue%cd%Cred%d\\ %Creset%s%Cred\\ [%cn]" --decorate --numstat
     #Log with relative dates
