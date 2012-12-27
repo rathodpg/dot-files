@@ -201,6 +201,11 @@ st()
     sudo find -type f ! -path '*.git/*' | sed 's/.*/"&"/' | sudo xargs -P 1000 -n 1000 grep $2 -iHn --colour=auto "$1"
 }
 
+ctc()
+{
+    sed -e '/^$/d' -e '/^$1/d' $2
+}
+
 #Start tmux only when required.
 #cmd="tmux attach-session"; [[ $TERM != "screen" ]] && output=`$cmd 2>&1`; if [[ $output == "no sessions" ]];then tmux; fi
 
@@ -254,6 +259,7 @@ alias gpl="git pull"
 alias gpush="git push"
 alias less="less -r"
 alias ff="find -name "
+alias fp="pgrep -fl "
 
 ########
 #EXPORTS
