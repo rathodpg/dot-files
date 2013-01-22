@@ -260,6 +260,8 @@ alias gpush="git push"
 alias less="less -r"
 alias ff="find -name "
 alias fp="pgrep -fl "
+alias s="sudo "
+alias stf='sudo tail -f '
 
 ########
 #EXPORTS
@@ -282,6 +284,9 @@ export PYTHONDOCS=/usr/share/doc/python2/html/
 export EC2_PRIVATE_KEY=~/.ec2/pk.pem
 export export EC2_CERT=~/.ec2/cert.pem
 export EC2_URL=https://ec2.us-west-1.amazonaws.com/
+
+#Ruby related
+export RUBYOPT="rubygems"
 
 #############
 #Bash Related
