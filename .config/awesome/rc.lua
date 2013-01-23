@@ -5,11 +5,13 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -112,6 +114,22 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
+-- Create battery widget
+batwidget = wibox.widget.textbox()
+baticon = wibox.widget.imagebox()
+-- Register
+vicious.register(batwidget, vicious.widgets.bat,
+    function (widget, args)
+        if args[2] == 0 then return ""
+        else
+            --baticon.image = image(awful.util.getdir("config") .. "/icons/bat.png")
+            baticon:set_image(awful.util.getdir("config") .. "/icons/bat.png")
+            return "<span color='white'>".. args[2] .. "% | " .. args [3] .. "</span>"
+        end
+    end, 5, "BAT0"
+)
+
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -193,6 +211,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(batwidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
