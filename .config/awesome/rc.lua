@@ -143,13 +143,17 @@ mytasklist.buttons = awful.util.table.join(
                                                   c:raise()
                                               end
                                           end),
-                     awful.button({ }, 3, function ()
-                                              if instance then
-                                                  instance:hide()
-                                                  instance = nil
-                                              else
-                                                  instance = awful.menu.clients({ width=250 })
-                                              end
+                     --awful.button({ }, 3, function ()
+                     --                         if instance then
+                     --                             instance:hide()
+                     --                             instance = nil
+                     --                         else
+                     --                             instance = awful.menu.clients({ width=250 })
+                     --                         end
+                     --                     end),
+                     -- Added openbox like feature of Right-click to close the window
+                     awful.button({ }, 3, function (c)
+                                              c:kill()
                                           end),
                      awful.button({ }, 4, function ()
                                               awful.client.focus.byidx(1)
