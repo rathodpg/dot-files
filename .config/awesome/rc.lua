@@ -99,6 +99,10 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "Xrandr on", awful.util.getdir("config") .. "/scripts/monitor.sh"},
+                                    { "Xrandr off", "xrandr --output VGA1 --off"},
+                                    { "Nautilus", "/usr/bin/nautilus"},
+                                    { "qBittorrent", "/usr/bin/qbittorrent"},
                                     { "open terminal", terminal }
                                   }
                         })
