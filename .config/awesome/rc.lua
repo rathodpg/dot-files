@@ -292,7 +292,9 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+    -- Run Applications
+    awful.key({ "Mod1"  }, "F2", function() awful.util.spawn("/usr/bin/dmenu_run", false) end)
 )
 
 clientkeys = awful.util.table.join(
