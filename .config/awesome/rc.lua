@@ -239,6 +239,10 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    -- Custom
+    -- App shortcuts
+    awful.key({ modkey, }, "t", function() awful.util.spawn("/usr/bin/thunderbird") end),
+    awful.key({ modkey, }, "b", function() awful.util.spawn("/usr/bin/nautilus") end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
