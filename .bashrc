@@ -15,6 +15,12 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+bold='\['`tput bold`'\]'        ; [ $bold = '\[\]' ] && bold=
+roman='\['`tput sgr0`'\]'       ; [ $roman = '\[\]' ] && roman=
+red='\['`tput setaf 1`'\]'      ; [ $red = '\[\]' ] && red=
+yellow='\['`tput setaf 3`'\]'   ; [ $yellow = '\[\]' ] && yellow=
+normal='\['`tput setaf 9`'\]'   ; [ $normal = '\[\]' ] && normal=
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
@@ -61,9 +67,11 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+		#PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+        PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[00m\]'$bold$red'`echo $? | sed '\''s/^0\$//'\''`'$yellow' \$'$normal$roman' '
 	else
-		PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+		#PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+        PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[00m\]'$bold$red'`echo $? | sed '\''s/^0\$//'\''`'$yellow' \$'$normal$roman' '
 	fi
 
 #	alias ls='ls --color=auto'
@@ -203,7 +211,8 @@ st()
 
 ctc()
 {
-    sed -e '/^$/d' -e '/^$1/d' $2
+    echo sed -e "/^$/d" -e "/^\$1/d" $2;
+    sed -e "/^$/d" -e "/^\$1/d" $2;
 }
 
 #Start tmux only when required.
